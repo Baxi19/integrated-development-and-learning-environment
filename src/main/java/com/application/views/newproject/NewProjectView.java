@@ -25,10 +25,10 @@ public class NewProjectView extends Div {
         setId("new-project-view");
 
         HorizontalLayout layoutCode = new HorizontalLayout();
-        VerticalLayout layoutFile = new VerticalLayout();
+        //VerticalLayout layoutFile = new VerticalLayout();
         VerticalLayout layoutTerminal = new VerticalLayout();
 
-        Label secondLabel = new Label("File.java");
+        //Label secondLabel = new Label("File.java");
         Label thirdLabel = new Label("Terminal component");
 
         TextArea codeArea = new TextArea("Code");
@@ -38,26 +38,19 @@ public class NewProjectView extends Div {
 
         TextArea line = new TextArea("Line");
         line.setHeightFull();
-        line.setMaxWidth("50px");
+        line.setMaxWidth("30px");
 
-        Button bottomNewFile = new Button("New File", new Icon(VaadinIcon.FILE_ADD));
+        line.setEnabled(false);
+        //Button bottomNewFile = new Button("New File", new Icon(VaadinIcon.FILE_ADD));
+
 
         layoutCode.add(line, codeArea);
-        layoutFile.add(bottomNewFile, secondLabel);
         layoutTerminal.add(thirdLabel);
 
 
-        SplitLayout layout = new SplitLayout();
-        layout.addToPrimary(layoutFile);
-        layout.addToSecondary(layoutCode);
-
-        layout.setPrimaryStyle("minWidth", "100px");
-        layout.setPrimaryStyle("maxWidth", "150px");
-        layout.setPrimaryStyle("background", "salmon");
-
         SplitLayout layout2 = new SplitLayout();
         layout2.setOrientation(SplitLayout.Orientation.VERTICAL);
-        layout2.addToPrimary(layout);
+        layout2.addToPrimary(layoutCode);
         layout2.addToSecondary(layoutTerminal);
         layout2.setSizeFull();
         add(layout2);
