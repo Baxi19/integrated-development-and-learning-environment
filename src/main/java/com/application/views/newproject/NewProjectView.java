@@ -9,6 +9,7 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.splitlayout.SplitLayout;
+import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
@@ -32,6 +33,7 @@ public class NewProjectView extends Div {
         Label thirdLabel = new Label("Terminal component");
 
         TextArea codeArea = new TextArea("Code");
+        codeArea.getStyle().set("minHeight", "450px");
         codeArea.setHeightFull();
         codeArea.setWidthFull();
         codeArea.setPlaceholder("Write your code here ...");
@@ -42,10 +44,16 @@ public class NewProjectView extends Div {
 
         line.setEnabled(false);
         //Button bottomNewFile = new Button("New File", new Icon(VaadinIcon.FILE_ADD));
+        NumberField numberField = new NumberField();
+        numberField.setValue(1d);
+        numberField.setHasControls(true);
+        numberField.setMin(1);
+        numberField.setMax(10);
 
+        //add(numberField);
 
         layoutCode.add(line, codeArea);
-        layoutTerminal.add(thirdLabel);
+        layoutTerminal.add(thirdLabel, numberField);
 
 
         SplitLayout layout2 = new SplitLayout();

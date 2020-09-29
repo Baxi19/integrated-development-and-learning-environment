@@ -9,4 +9,5 @@ import com.vaadin.flow.server.PWA;
  */
 @PWA(name = "Integrated Development and Learning Environment", shortName = "IDLE")
 public class AppShell implements AppShellConfigurator {
+
 }

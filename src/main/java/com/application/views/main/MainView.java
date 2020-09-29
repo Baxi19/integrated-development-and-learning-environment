@@ -84,7 +84,7 @@ public class MainView extends AppLayout {
 
     private Component[] createMenuItems() {
         RouterLink[] links = new RouterLink[] {
-            new RouterLink("New Project", NewProjectView.class)
+            new RouterLink("New File", NewProjectView.class)
         };
         return Arrays.stream(links).map(MainView::createTab).toArray(Tab[]::new);
     }
